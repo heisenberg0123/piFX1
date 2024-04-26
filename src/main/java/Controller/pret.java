@@ -37,6 +37,13 @@ public class pret {
 
     @FXML
     void ajoutPret(ActionEvent event) {
+        if (montantTF.getText().trim().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setContentText("Veuillez saisir un montant.");
+            alert.showAndWait();
+            return;
+        }
 
         PretService pretservice= new PretService();
         Pret pret1=new Pret(Integer.parseInt(montantTF.getText()), Integer.parseInt(periodeTF.getText()), "", typeTF.getText(), descriptionTF.getText(), 0, 0, 0);
