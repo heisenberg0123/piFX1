@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="634.0" prefWidth="1249.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.afficher">
+   <children>
+      <TableView fx:id="tableView" layoutY="98.0" prefHeight="479.0" prefWidth="741.0">
+        <columns>
+          <TableColumn fx:id="montantCol" prefWidth="153.0" text="Montant" />
+          <TableColumn fx:id="typeCol" prefWidth="182.0" text="type" />
+            <TableColumn fx:id="periodeCol" prefWidth="85.0" text="periode" />
+            <TableColumn fx:id="descriptionCol" prefWidth="240.0" text="description" />
+            <TableColumn fx:id="idCol" prefWidth="76.0" text="id" />
+        </columns>
+      </TableView>
+      <Button layoutX="675.0" layoutY="609.0" mnemonicParsing="false" onAction="#addPret" text="ajouter" />
+      <TextField fx:id="idTF" layoutX="757.0" layoutY="131.0" promptText="id" />
+      <TextField fx:id="montantTF" layoutX="757.0" layoutY="197.0" promptText="Montant" />
+      <TextField fx:id="typeTF" layoutX="747.0" layoutY="259.0" promptText="Tyoe" />
+      <TextField fx:id="periodeTF" layoutX="747.0" layoutY="325.0" promptText="periode" />
+      <TextField fx:id="descriptionTF" layoutX="747.0" layoutY="415.0" promptText="description" />
+      <Button layoutX="770.0" layoutY="609.0" mnemonicParsing="false" onAction="#modifPret" text="modifier" />
+      <Button layoutX="840.0" layoutY="609.0" mnemonicParsing="false" onAction="#deletePret" text="delete" />
+   </children>
+</AnchorPane>
