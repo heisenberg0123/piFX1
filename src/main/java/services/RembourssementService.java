@@ -15,18 +15,23 @@ public class RembourssementService implements IService<Rembourssement> {
     public RembourssementService(){
         connection= Connexion.getInstance().getConnection();
     }
-    public void ajouter(Rembourssement rmb) throws SQLException {
-        String req = "INSERT INTO remboursement (mois, montant_paye, periode_retard, status) " +
+    public void ajouter(Rembourssement rmb,int id) throws SQLException {
+        String req = "INSERT INTO remboursement (mois, montant_paye, periode_retard, status,rmb_id) " +
                 "VALUES ('" + rmb.getMois() + "','" + rmb.getMontant_paye() + "','" + rmb.getPeriode_retard() + "','" +
-                rmb.getStatus() + "')";
+                rmb.getStatus() + "','" + id + "')";
 
         Statement st = connection.createStatement();
         st.executeUpdate(req);
     }
 
     @Override
+    public void ajouter(Rembourssement rembourssement) throws SQLException {
+        
+    }
+
+    @Override
     public void modifier(Rembourssement rembourssement) throws SQLException {
-        String req="UPDATE remboursement SET moois=?,payee=? ,retard= ? , status= ? WHERE id=? ";
+        String req="UPDATE remboursement SET moois=?,payee=? ,retard= ? , status= ? , rmb_id=? WHERE id=? ";
 
         PreparedStatement ps=connection.prepareStatement(req);
         ps.setString(1,rembourssement.getMois());
@@ -34,6 +39,7 @@ public class RembourssementService implements IService<Rembourssement> {
         ps.setString(3,rembourssement.getPeriode_retard());
         ps.setInt(4,rembourssement.getStatus());
         ps.setInt(5,rembourssement.getId());
+        ps.setInt(6, rembourssement.getRmb_id());
 
         ps.executeUpdate();
     }
@@ -50,7 +56,7 @@ public class RembourssementService implements IService<Rembourssement> {
     @Override
     public List<Rembourssement> recuperer() throws SQLException {
         List<Rembourssement> list = new ArrayList<>();
-        String req = "SELECT * FROM remboursement";
+        String req = "SELECT * FROM remboursement  ";
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
@@ -60,6 +66,7 @@ public class RembourssementService implements IService<Rembourssement> {
             pret.setStatus(rs.getInt("status"));
             pret.setMontant_paye(rs.getInt("montant_paye"));
             pret.setPeriode_retard(rs.getString("periode_retard"));
+            pret.setRmb_id(rs.getInt("rmb_id"));
 
             list.add(pret);
         }

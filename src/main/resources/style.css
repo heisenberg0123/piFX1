@@ -1,0 +1,15 @@
+
+
+
+
+.form_container {
+
+     -fx-border-width: 0 0 0 1;
+     -fx-border-color: #4682B4;
+     -fx-padding: 10;
+     -fx-spacing: 15;
+     -fx-border-radius: 20px;
+     -fx-background-color:#4682B4;
+
+
+ }

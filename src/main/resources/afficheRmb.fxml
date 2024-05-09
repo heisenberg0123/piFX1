@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="662.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.afficheRmb">
+<AnchorPane prefHeight="662.0" prefWidth="871.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.afficheRmb">
    <children>
-      <TableView fx:id="rmb" layoutX="45.0" layoutY="177.0" prefHeight="439.0" prefWidth="597.0">
+      <TableView fx:id="rmb" layoutX="45.0" layoutY="177.0" prefHeight="439.0" prefWidth="597.0" styleClass="form_container" stylesheets="@style.css">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="155.0" text="id" />
           <TableColumn fx:id="moisCol" prefWidth="160.0" text="date" />
@@ -20,16 +20,16 @@
             <TableColumn fx:id="retardCol" prefWidth="143.0" text="periode retard" />
         </columns>
       </TableView>
-      <Button layoutX="698.0" layoutY="541.0" mnemonicParsing="false" onMouseClicked="#addRmb" style="-fx-background-color: blue;" text="ajouter" textFill="#dcdce4" />
-      <Button layoutX="701.0" layoutY="585.0" mnemonicParsing="false" onAction="#modifRmb" text="modif" textFill="#1b0672" />
-      <Button layoutX="699.0" layoutY="496.0" mnemonicParsing="false" onAction="#deleteRmb" style="-fx-background-color: red;" text="delete" textFill="#e8e5e5" />
-      <TextField fx:id="idFT" layoutX="688.0" layoutY="200.0" />
-      <TextField fx:id="moisFT" layoutX="688.0" layoutY="262.0" />
-      <TextField fx:id="payeeFT" layoutX="688.0" layoutY="331.0" />
-      <TextField fx:id="retardFT" layoutX="688.0" layoutY="372.0" />
+      <Button layoutX="698.0" layoutY="535.0" mnemonicParsing="false" onMouseClicked="#addRmb" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: blue;" text="ajouter" textFill="#dcdce4" />
+      <Button layoutX="701.0" layoutY="579.0" mnemonicParsing="false" onAction="#modifRmb" prefHeight="31.0" prefWidth="68.0" text="modif" textFill="#1b0672" />
+      <Button layoutX="699.0" layoutY="490.0" mnemonicParsing="false" onAction="#deleteRmb" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: red;" text="delete" textFill="#e8e5e5" />
+      <TextField fx:id="idFT" layoutX="688.0" layoutY="200.0" promptText="id" styleClass="form_container" stylesheets="@style.css" />
+      <TextField fx:id="moisFT" layoutX="688.0" layoutY="262.0" promptText="date" styleClass="form_container" stylesheets="@style.css" />
+      <TextField fx:id="payeeFT" layoutX="688.0" layoutY="331.0" promptText="payee" styleClass="form_container" stylesheets="@style.css" />
+      <TextField fx:id="retardFT" layoutX="688.0" layoutY="397.0" promptText="retard" styleClass="form_container" stylesheets="@style.css" />
       <Label layoutX="54.0" layoutY="48.0" prefHeight="50.0" prefWidth="258.0" text="Rembourssement" textFill="#1328ae">
          <font>
-            <Font size="21.0" />
+            <Font size="32.0" />
          </font>
       </Label>
       <ImageView fitHeight="146.0" fitWidth="419.0" layoutX="562.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -37,5 +37,11 @@
             <Image url="@../../../../../Users/Click.infogsm/Desktop/remboursement-avec-le-cheque-energie.jpg" />
          </image>
       </ImageView>
+      <ImageView fitHeight="146.0" fitWidth="368.0" layoutX="626.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Remboursement-deban.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="857.0" layoutY="579.0" mnemonicParsing="false" onAction="#pdf" prefHeight="57.0" prefWidth="83.0" text="Pdf" />
    </children>
 </AnchorPane>

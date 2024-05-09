@@ -1,22 +1,23 @@
 package models;
 
 public class Rembourssement {
-    private int id,montant_paye,status;
+    private int id,montant_paye,status,rmb_id;
     private String mois,periode_retard;
 
 
     public Rembourssement() {
     }
 
-    public Rembourssement(int id, int montant_paye, int status, String mois, String periode_retard) {
+    public Rembourssement(int id, int montant_paye, int status, String mois, String periode_retard,int rmb_id) {
         this.id = id;
+    this.rmb_id=rmb_id;
         this.montant_paye = montant_paye;
         this.status = status;
         this.mois = mois;
         this.periode_retard = periode_retard;
     }
 
-    public Rembourssement(int montant_paye, int status, String mois, String periode_retard) {
+    public Rembourssement(int montant_paye, int status, String mois, String periode_retard,int rmb_id) {
         this.montant_paye = montant_paye;
         this.status = status;
         this.mois = mois;
@@ -63,12 +64,21 @@ public class Rembourssement {
         this.periode_retard = periode_retard;
     }
 
+    public int getRmb_id() {
+        return rmb_id;
+    }
+
+    public void setRmb_id(int rmb_id) {
+        this.rmb_id = rmb_id;
+    }
+
     @Override
     public String toString() {
         return "Rembourssement{" +
                 "id=" + id +
                 ", montant_paye=" + montant_paye +
                 ", status=" + status +
+                ", rmb_id=" + rmb_id +
                 ", mois='" + mois + '\'' +
                 ", periode_retard='" + periode_retard + '\'' +
                 '}';
